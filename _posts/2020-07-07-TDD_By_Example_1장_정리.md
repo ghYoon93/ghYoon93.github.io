@@ -43,7 +43,7 @@ tags: TDD
 * **$5 X 2 = $10**
 * amount를 private으로 만들기
 * Dollar 부작용(side effect)?
-* Dollar 반올림?
+* Moneyr 반올림?
 
 
 
@@ -142,7 +142,7 @@ void times(int multiplier) {
 * ~~$5 X 2 = $10~~
 * amount를 private으로 만들기
 * Dollar 부작용(side effect)?
-* Dollar 반올림?
+* Money 반올림?
 
 ```java
 public class Dollar {

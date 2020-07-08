@@ -4,13 +4,19 @@ categories: TIL
 tags: TDD
 ---
 
+>times 연산 후 five는 더이상 5의 값을 갖지 않는다.
+>
+>five는 언제나 5가 될 수 있도록 리팩토링 해보자
+
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
 * $5 + 10CHF = $10
 * ~~$5 X 2 = $10~~
 * amount를 private으로 만들기
 * **Dollar 부작용(side effect)?**
-* Dollar 반올림?
+* Money 반올림?
 
 
 
@@ -54,7 +60,7 @@ Dollar times(int multiplier) {
 * ~~$5 X 2 = $10~~
 * amount를 private으로 만들기
 * ~~Dollar 부작용(side effect)?~~
-* Dollar 반올림?
+* Money 반올림?
 
 ```java
 public class Dollar {
