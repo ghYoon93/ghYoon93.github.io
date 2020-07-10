@@ -1,6 +1,6 @@
 ---
 title: 프라이버시
-ategories: TIL
+categories: TIL
 tags: TDD
 ---
 
