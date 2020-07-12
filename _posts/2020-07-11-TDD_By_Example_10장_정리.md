@@ -110,7 +110,39 @@ public String toString() {
 테스트 코드를 먼저 작성하는게 맞지만
 
 * toString()은 디버그 출력에만 쓰이기 때문에 이게 잘못 구현됨으로 인해 얻게 될 리스크가 적다.
-* 이미 빨간 막대 상태인데 이 상태에서는새로운 테스트를작성하지않는 게 좋을 것 같다.
+* 이미 빨간 막대 상태인데 이 상태에서는새로운 테스트를 작성하지않는 게 좋을 것 같다.
 
 
+
+>expected: <10 CHF> but was: <10 CHF>
+
+toString()으로 에러 메세지를 명확히 했지만 여전히 혼란스럽다.
+
+답은 맞았지만 클래스가 다른 것이 원인이다. Franc 대신 Money가 왔다.
+
+문제는 equals() 구현에 있다.
+
+```java
+// Money
+public boolean equals(Object object) {
+    Money money = (Money) object;
+    return amount == money.amount
+        && getClass().equals(money.getClass());
+}
+```
+
+지금까지 우리는 객체 개념이 동일한지 검사했다. 하지만 이제 통화 개념을 도입했으니 이제 검사해야할 것은 통화가 같은지 여부이다.
+
+방금 toString() 작성 시 빨간 막대 상태에서 새로운 테스트를 작성하지 않는 것이 좋을 것이라고 했다. 하지만 지금은 실제 모델 코드(equals())를 수정하려고 하는 중이고 테스트 없이는 모델 코드를 수정할 수 없다.
+
+보수적인 방법을 따르자면 변경된 코드를되돌려서 다시 초록 막대 상태로 돌아가야 한다. 그러고 나서 equals()를 위해 테스트를 고치고 구현 코드를 고칠 수 있게되고, 그 후에야 원래 하던일을 다시 할 수 있다.
+
+
+
+```java
+// Franc
+Money times(intmultiplier) {
+    return new Franc(amount * multiplier, currency);
+}
+```
 
