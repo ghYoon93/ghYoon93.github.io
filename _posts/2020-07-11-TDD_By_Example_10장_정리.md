@@ -141,8 +141,87 @@ public boolean equals(Object object) {
 
 ```java
 // Franc
-Money times(intmultiplier) {
+Money times(int multiplier) {
+    // return new Money(amount * multiplier, currency);
     return new Franc(amount * multiplier, currency);
 }
 ```
 
+다시 Franc을 반환하도록 바꿨다. 테스트도 원래대로 초록 막대 상태가 되었다.
+
+Franc(10, "CHF")과 Money(10, "CHF")가 서로 같기를 바랬지만, 사실은 그렇지 않다고 보고됐다.
+
+우리는 이 사실을 그대로 테스트로 사용할 수 있다.
+
+```java
+public void testDifferentClassEquality() {
+    assertTrue(new Money(10,"CHF").equals(new Franc(10, "CHF")));
+}
+```
+
+이제 equals()코드에서 currency를 비교해보자
+
+```java
+// Money
+public boolean equals(Object object) {
+    Money money = (Money) object;
+    // return amount == money.amount
+    //         && getClass().equals(money.getClass());
+    return amount == money.amount
+        && currency().equals(money.currency());
+}
+
+// Franc
+Money times(int multiplier) {
+    // return new Franc(amount * multiplier, currency);
+    return new Money(amount * multiplier, currency);
+}
+
+// Dollar
+Money times(int multiplier) {
+    // return new Franc(amount * multiplier, currency);
+    return new Money(amount * multiplier, currency);
+}
+```
+
+이제 다시 Money를 반환해도 테스트를 통과할 수 있게 되었다.
+
+Dollar와 Franc의 times()가 동일해졌으므로 상위 클래스로 올리자.
+
+```java
+// Money
+Money times(int multiplier) {
+    // return new Franc(amount * multiplier, currency);
+    return new Money(amount * multiplier, currency);
+}
+```
+
+
+
+**어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
+
+* $5 + 10CHF = $10
+* ~~$5 X 2 = $10~~
+* ~~amount를 private으로 만들기~~
+* ~~Dollar 부작용(side effect)?~~
+* Money 반올림?
+* ~~equals()~~
+* hashCode()
+* Equal null
+* Equal object
+* ~~5CHF X 2 = 10CHF~~
+* Dollar/Franc 중복
+* ~~공용 equals~~
+* ~~공용 times~~
+* ~~Franc과 Dollar 비교하기~~
+* ~~통화?~~
+* testFrancMultiplication을 지워야할까?
+
+
+
+**검토**
+
+* 두 times()를 일치시키기 위해 그 메스드들이 호출하는 다른 메서드들을 인라인시킨 후 상수를 변수로 바꿔주었다.
+* 단지 디버깅을 위해 테스트 없이 toString()을 작성했다.
+* Franc 대신 Money를 반환하는 변경을 시도한 뒤 그것이 잘 작동할지를 테스트가 말하도록 했다.
+* 실험해본 것을 뒤로 되돌리고 또 다른 테스트를 작성했다. 테스트를 작동했더니 실험도 제대로 작동했다.
