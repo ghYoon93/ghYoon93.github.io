@@ -35,4 +35,37 @@ Money plus(Money addend) {
 
 객체가 우리를구해줄 것이다. 가지고 있는 객체와 외부 프로토콜이 같으면서 내부 구현은 다른 새로운 객체(imposter)를 만들 수 있다.
 
-해법은 Money와비슷하게 동작하지만 사실은 두 Money의 합을 나타내는 객체를 만드는 것이다.
+해법은 Money와 비슷하게 동작하지만 사실은 두 Money의 합을 나타내는 객체를 만드는 것이다.
+
+
+
+**Expression: Money의 합을 나타내는 객체**
+
+```java
+// Expression
+interface Expression(){}
+
+// Money
+Expression plus(Money addend) {
+    return new Money(amount + addend.amount, currency);
+}
+// Money
+class Money implements Expression(){}
+    
+// Bank
+class Bank {
+    Money reduce(Expressino source, String to) {
+        return Money.dollar(10);
+    }
+}
+```
+
+
+
+**검토**
+
+* 큰 테스트를 작은 테스트 ($5 + 10CHF -> $5 + $5)로 줄여서 발전을 나타낼 수 있도록 했다.
+* 우리에게 필요한 계산(computation)에 대한 가능한 메타포들을 신중히 생각해봤다.
+* 새 메타포에 기반하여 기존의 테스트를 재작성
+* 테스트를 빠르게 컴파일
+* 테스트를 실행ㄴ
