@@ -45,21 +45,50 @@ categories: TDD
 
 
 
-```python
-test = WasRun("testMethod")
-print test.wasRun
-test.testMethod()
-print test.wasRun
+```java
+WasRun test = new WasRun("testMethod");
+System.out.println(test.wasRun);
+// test.testMethod();
+test.run();
+System.out.println(test.wasRun);
 
-# WasRun
-class WasRun:
-    def __init__(self, name):
-        self.wasRun = None
+// WasRun
+class WasRun {
     
-    def testMethod(self):
-        self.wasRun = 1
+    boolean wasRun;
     
-    def run(self):
-        self.testMethod()
+    public WasRun(String name) {
+        this.wasRun = false;    
+    }
+    
+    public void testMethod() {
+        this.wasRun = true;
+    }
+    
+    public void run() {
+        this.testMethod();
+    }
+}
+```
+
+
+
+테스트 객체가 testMethod를 직접 호출하는 대신 인터페이스인 run을 만들어 호출하도록 했다.
+
+
+
+testMethod()를 동적으로 호출하도록 리팩토링 (테스트 케이스의 이름과 같은 문자열을 갖는 필드가 주어지면, 함수로 호출될 때 해당 메서드를 호출하게끔 하는 객체 얻어내기)
+
+```java
+// WasRun
+public void run() {
+    // this.testMethod();
+    try {
+        Method method = this.getClass().getMethod(name, null);
+        method.invoke(this, null);
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+}
 ```
 
