@@ -92,3 +92,113 @@ public void run() {
 }
 ```
 
+
+
+하나의 특별한 사례에 대해서만 작동하는 코드를 가져다가 다른 여러 사례에 대해서도 작동할 수 있도록 상수를 변수로 변화시켜 일반화하는 것은 리팩토링의 일반적인 패턴
+
+머릿 속 순수한 추론에 의해 일반화하게 하지 않고, 잘 돌아가는 구체적인 사례에서 시작하여 일반화할 수 있게 해준다는 점에서 TDD는 이 패턴을 잘 지원한다는 것을 알 수 있다.
+
+
+
+WasRun이 하는 두가지 독립적인 일
+
+* 메서드가 호출되었는지 그렇지 않은지를 기억
+* 메서드를 동적으로 호출하는 일
+
+
+
+유사분열을 일으킬 시기이다. (두 부분을 서로 분리했고 다시 원래대로 하나로 돌아가지 않는다면 상위 클래스를 만드는 것을 고려)
+
+```java
+// TestCase
+public class TestCase {
+    String name;
+    public TestCase(String name) {
+        this.name = name;
+    }
+}
+```
+
+
+
+```java
+// TestCase
+public class TestCase {
+    private String name;
+    public TestCase(String name) {
+        this.name = name;
+    }
+    public void run() {
+        // this.testMethod();
+        try {
+            Method method = this.getClass().getMethod(name, null);
+            method.invoke(this, null);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+// WasRun
+boolean wasRun;
+    
+    public WasRun(String name) {
+        super(name);
+        this.wasRun = false;
+    }
+    
+    public void testMethod() {
+        this.wasRun = true;
+    }
+}
+
+// TestCaseTest
+public class TestCaseTest extends TestCase {
+    
+    public TestCaseTest(String name) {
+        super(name);
+    }
+    
+    public void testRunning() {
+        WasRun test = new WasRun("testMethod");
+        System.out.println(test.wasRun);
+        assert test.wasRun == false;
+        // test.testMethod();
+        test.run();
+        System.out.println(test.wasRun);
+        assert test.wasRun == true;
+
+    }
+
+    public static void main(String[] args) {
+        new TestCaseTest("testRunning").run();
+    }
+
+}
+```
+
+run 메서드와 name 변수를 TestCase로 끌어올렸다.  (오퍼레이션을 데이터 근처에 놓을 방법을 고민해보자)
+
+이후 WasRun과 TestCaseTest에서 TestCase를 상속받음으로써 run 메서드를 호출할 수 있도록 했다.
+
+
+
+
+
+**테스트 프레임워크**
+
+* ~~테스트 메서드 호출하기~~
+* 먼저 setUp 호출하기
+* 나중에 tearDown 호출하기
+* 테스트 메서드가 실패하더라도 tearDown 호출하기
+* 여러 개의 테스트 실행하기
+* 수집된 결과를 출력하기
+
+
+
+**검토**
+
+* 몇 번의 잘못된 출발을 한 후, 아주 자그마한 단계로 시작하는 법을 알아냈다.
+* 일단 하드코딩을 한 다음에 상수를 변수로 대체하여 일반성을 이끌어내는 방식으로 기능을 구현
+* 플러거블 셀렉터(Pluggable Selector)를 사용했다. 플러거블 셀렉터는 정적 코드 분석을 어렵게 만든다.
+* 테스트 프레임워크를 작은 단계로만 부트스트랩했다.
