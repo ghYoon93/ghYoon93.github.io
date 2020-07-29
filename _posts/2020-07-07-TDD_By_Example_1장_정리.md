@@ -39,8 +39,7 @@ tags: TDD
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* **$5 X 2 = $10**
+* **$5 X 2 = $10 (1)**
 * amount를 private으로 만들기
 * Dollar 부작용(side effect)?
 * Moneyr 반올림?
@@ -138,8 +137,7 @@ void times(int multiplier) {
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
+* ~~$5 X 2 = $10 (1)~~
 * amount를 private으로 만들기
 * Dollar 부작용(side effect)?
 * Money 반올림?

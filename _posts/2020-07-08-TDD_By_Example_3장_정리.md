@@ -4,7 +4,7 @@ categories: TIL
 tags: TDD
 ---
 
->
+
 
 ### Value Obejct Pattern
 
@@ -23,12 +23,11 @@ Dollar를 해시 테이블의 키로 쓸 생각이라면 equals()를 구현할 �
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
+* ~~$5 X 2 = $10 (1)~~
 * amount를 private으로 만들기
-* ~~Dollar 부작용(side effect)?~~
+* ~~Dollar 부작용(side effect)? (2)~~
 * Money 반올림?
-* **equals()**
+* **equals() (3)**
 * hashCode()
 
 ```java
@@ -71,12 +70,11 @@ public boolean equals(Object object) {
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
+* ~~$5 X 2 = $10 (1)~~
 * amount를 private으로 만들기
-* ~~Dollar 부작용(side effect)?~~
+* ~~Dollar 부작용(side effect)? (2)~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object

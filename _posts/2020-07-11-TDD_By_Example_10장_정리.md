@@ -4,23 +4,24 @@ categories: TIL
 tags: TDD
 ---
 
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
-* ~~amount를 private으로 만들기~~
-* ~~Dollar 부작용(side effect)?~~
+* ~~$5 X 2 = $10 (1)~~
+* ~~amount를 private으로 만들기 (4)~~
+* ~~Dollar 부작용(side effect) (2)?~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object
-* ~~5CHF X 2 = 10CHF~~
-* Dollar/Franc 중복
-* ~~공용 equals~~
-* **공용 times**
-* ~~Franc과 Dollar 비교하기~~
-* ~~통화?~~
+* ~~5CHF X 2 = 10CHF (5)~~
+* ~~Dollar/Franc 중복 (8)~~
+* ~~공용 equals (6)~~
+* **공용 times (10)**
+* ~~Franc과 Dollar 비교하기 (7)~~ 
+* ~~통화 (9)~~
 * testFrancMultiplication을 지워야할까?
 
 
@@ -39,7 +40,7 @@ Money times(int multiplier) {
 }
 ```
 
-이 둘을 동일하게 만들기 위한 명백한 방법이 없다. 때로는 전진하기 위해서 물러서야 할 때도 잇는 법이다.
+이 둘을 동일하게 만들기 위한 명백한 방법이 없다. 때로는 전진하기 위해서 물러서야 할 때도 있는 법이다.
 
 팩토리 메서드를 인라인시키면 어떨까?
 

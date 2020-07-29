@@ -4,23 +4,24 @@ categories: TIL
 tags: TDD
 ---
 
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
-* ~~amount를 private으로 만들기~~
-* ~~Dollar 부작용(side effect)?~~
+* ~~$5 X 2 = $10 (1)~~
+* ~~amount를 private으로 만들기 (4)~~
+* ~~Dollar 부작용(side effect) (2)?~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object
-* ~~5CHF X 2 = 10CHF~~
-* **Dollar/Franc 중복**
-* ~~공용 equals~~
+* ~~5CHF X 2 = 10CHF (5)~~
+* **Dollar/Franc 중복 (8)**
+* ~~공용 equals (6)~~
 * 공용 times
-* ~~Franc과 Dollar 비교하기~~
-* 통화?
+* ~~Franc과 Dollar 비교하기 (7)~~ 
+* 통화
 
 
 
@@ -149,23 +150,24 @@ static Money franc(int amount) {
 }
 ```
 
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
-* ~~amount를 private으로 만들기~~
-* ~~Dollar 부작용(side effect)?~~
+* ~~$5 X 2 = $10 (1)~~
+* ~~amount를 private으로 만들기 (4)~~
+* ~~Dollar 부작용(side effect) (2)?~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object
-* ~~5CHF X 2 = 10CHF~~
-* Dollar/Franc 중복
-* ~~공용 equals~~
+* ~~5CHF X 2 = 10CHF (5)~~
+* ~~Dollar/Franc 중복 (8)~~
+* ~~공용 equals (6)~~
 * 공용 times
-* ~~Franc과 Dollar 비교하기~~
-* 통화?
+* ~~Franc과 Dollar 비교하기 (7)~~ 
+* 통화
 * testFrancMultiplication을 지워야할까?
 
 

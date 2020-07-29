@@ -4,22 +4,23 @@ categories: TIL
 tags: TDD
 ---
 
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
-* ~~amount를 private으로 만들기~~
-* ~~Dollar 부작용(side effect)?~~
+* ~~$5 X 2 = $10 (1)~~
+* ~~amount를 private으로 만들기 (4)~~
+* ~~Dollar 부작용(side effect) (2)?~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object
-* ~~5CHF X 2 = 10CHF~~
+* ~~5CHF X 2 = 10CHF (5)~~
 * Dollar/Franc 중복
-* ~~공용 equals~~
+* ~~공용 equals (6)~~
 * 공용 times
-* **Franc과 Dollar 비교하기**
+* **Franc과 Dollar 비교하기 (7)** 
 
 
 
@@ -44,23 +45,26 @@ public boolean equals(Object object) {
 
 현실 세계의 재정 분야에 맞는 용어를 사용하고 싶지만 통화 개념도 없고 도입할만한 이유가 없으므로 자바 객체 용어를 사용한다.
 
+
+
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
-* ~~amount를 private으로 만들기~~
-* ~~Dollar 부작용(side effect)?~~
+* ~~$5 X 2 = $10 (1)~~
+* ~~amount를 private으로 만들기 (4)~~
+* ~~Dollar 부작용(side effect) (2)?~~
 * Money 반올림?
-* ~~equals()~~
+* ~~equals() (3)~~
 * hashCode()
 * Equal null
 * Equal object
-* ~~5CHF X 2 = 10CHF~~
+* ~~5CHF X 2 = 10CHF (5)~~
 * Dollar/Franc 중복
-* ~~공용 equals~~
+* ~~공용 equals (6)~~
 * 공용 times
-* ~~Franc과 Dollar 비교하기~~
+* ~~Franc과 Dollar 비교하기 (7)~~ 
 * 통화
+
+
 
 이제 공용times()를 처리할 때다. 그 이전에 혼합된 통화 간의 연산에 대해 다뤄야한다.
 

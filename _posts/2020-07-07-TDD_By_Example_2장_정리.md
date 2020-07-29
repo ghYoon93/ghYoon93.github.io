@@ -12,10 +12,9 @@ tags: TDD
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
+* ~~$5 X 2 = $10 (1)~~
 * amount를 private으로 만들기
-* **Dollar 부작용(side effect)?**
+* **Dollar 부작용(side effect)? (2)**
 * Money 반올림?
 
 
@@ -56,10 +55,9 @@ Dollar times(int multiplier) {
 
 **어떤 금액(주가)을 어떤 주(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.**
 
-* $5 + 10CHF = $10
-* ~~$5 X 2 = $10~~
+* ~~$5 X 2 = $10 (1)~~
 * amount를 private으로 만들기
-* ~~Dollar 부작용(side effect)?~~
+* ~~Dollar 부작용(side effect)? (2)~~
 * Money 반올림?
 
 ```java
@@ -88,4 +86,4 @@ public class Dollar {
 
 * 설계상 결함(Dollar 부작용)을 그 결함으로 인해 실패하는 테스트로 변환
 * 스텁 구현으로 빠르게 컴파일을 통과
-* 올발다고 생각하는 코드를 입력하여 테스트를 통과
+* 올바르다고 생각하는 코드를 입력하여 테스트를 통과
