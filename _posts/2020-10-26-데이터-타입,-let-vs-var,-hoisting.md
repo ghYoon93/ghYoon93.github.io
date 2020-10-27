@@ -1,7 +1,6 @@
 ---
 title: 데이터 타입, let vs var, hoisting
 categories: [JavaScript]
-tags: [variable, data type, hosting]
 ---
 
 자바스크립트에서 사용하는 데이터 타입과 let과 var의 차이점, hoisting을 알아보자
