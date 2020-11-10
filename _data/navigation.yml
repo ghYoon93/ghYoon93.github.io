@@ -14,5 +14,10 @@ main:
   #   url: /collection-archive/
   - title: 'Sitemap'
     url: /sitemap/
+
+docs:
+  - sample: Back-end
+    children:
+      - title: test
 sidebar:
   nav: 'docs'
