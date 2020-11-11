@@ -1,5 +1,5 @@
 ---
-title: Error: Cannot find module 'webpack-cli/bin/config-yargs'
+title: Error Cannot find module 'webpack-cli/bin/config-yargs'
 categories: [Error]
 tags: [Node.js, webpack, webpack-dev-server]
 ---
