@@ -93,10 +93,10 @@ analytics:
 
 # Site Author
 author:
-  name: 'Your Name'
+  name: 'YGHee'
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: 'I am an **amazing** person.'
-  location: 'Seoul, south korea'
+  bio: 'Java Developer'
+  location: 'Seoul, South Korea'
   email:
   links:
     - label: 'Email'
@@ -204,7 +204,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins (previously gems:)
 plugins:
