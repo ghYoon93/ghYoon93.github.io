@@ -5,10 +5,8 @@ excerpt: '스트림과 스트림의 종류, 작동 방식을 알아보자'
 categories:
   - Java
 tags:
-  - 데이터 작업
-  - streams
+  - Working with data
   - IO streams
-  - Buffered streams
 
 toc: true
 toc_label: 'Table of contents'
