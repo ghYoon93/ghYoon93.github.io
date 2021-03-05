@@ -5,14 +5,9 @@ excerpt: '객체 지향 프로그래밍의 핵심 개념, 기본 원칙에 대�
 categories:
   - CS
 tags:
-  - programming concept
+  - Essentials
+  - Programming concepts
   - OOP
-  - 캡슐화
-  - 추상화
-  - 상속
-  - 다형성
-  - 클래스
-  - 객체
 
 toc: true
 toc_label: 'Table of contents'

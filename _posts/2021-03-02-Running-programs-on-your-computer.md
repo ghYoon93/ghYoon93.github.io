@@ -6,6 +6,7 @@ categories:
   - Java
 tags:
   - Java internals
+  - Inside the JVM
 
 toc: true
 toc_label: 'Table of contents'

@@ -6,9 +6,7 @@ categories:
   - Java
 tags:
   - Java internals
-  - JVM
-  - JRE
-  - JDK
+  - Inside the JVM
 
 toc: true
 toc_label: 'Table of contents'

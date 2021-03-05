@@ -9,17 +9,15 @@ tags:
   - OOP
   - Classes and objects
   - Classes and members
-  - Constructor
 
 toc: true
 toc_label: 'Table of contents'
 toc_sticky: true
-
 ---
 
->  출처 [Constructor - JetBrains Academy](https://hyperskill.org/learn/step/3535)를 보고 요약한 내용입니다.
+> 출처 [Constructor - JetBrains Academy](https://hyperskill.org/learn/step/3535)를 보고 요약한 내용입니다.
 
-**생성자**는 클래스의 **새로운 객체**를 초기화하는 특별한 메서드입니다. 
+**생성자**는 클래스의 **새로운 객체**를 초기화하는 특별한 메서드입니다.
 
 클래스의 생성자는 인스턴스가 `new` 키워드로 생성되어질 때 호출됩니다.
 
@@ -30,9 +28,9 @@ toc_sticky: true
 
 **생성자의 역할**
 
-* 클래스의 **인스턴스**(객체) 초기화
-* 객체가 만들어질 때 필드에 값을 할당
-* 파라미터로 주어진 값들로 필드들을 초기화
+- 클래스의 **인스턴스**(객체) 초기화
+- 객체가 만들어질 때 필드에 값을 할당
+- 파라미터로 주어진 값들로 필드들을 초기화
 
 ## 1. Using constructors
 
