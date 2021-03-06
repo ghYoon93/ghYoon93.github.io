@@ -15,7 +15,7 @@ toc_sticky: true
 
 > 출처 [Running programs on your computer - JetBrains Academy](https://hyperskill.org/learn/step/3746)를 보고 요약한 내용입니다.
 
-## Installing Java on your computer
+## 1. Installing Java on your computer
 
 자바 프로그램을 실행하기 전에 **JDK**를 먼저 설치해주세요.
 
@@ -31,7 +31,7 @@ java -version
 
 만약 이러한 결과가 나오지 않았다면 운영 체제의 `path`에 환경 변수를 설정했는지 확인해보세요.
 
-## Writing a program
+## 2. Writing a program
 
 **자바 프로그램 작성하기**
 
@@ -46,7 +46,7 @@ public class Main {
 }
 ```
 
-## Compiling and running a program
+## 3. Compiling and running a program
 
 프로그램을 작성했다면 자바 컴파일러로 `Main.java` 파일을 컴파일해야합니다.
 

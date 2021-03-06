@@ -17,7 +17,7 @@ toc_sticky: true
 
 **스트림**은 자바가 제공하는 추상화로 파일, 네트워크, 기타 리소스 같은 외부와 데이터를 송수신합니다.
 
-## Input and output streams
+## 1. Input and output streams
 
 **IO 스트림**은 물의 흐름과 같이 시작 지점과 끝 지점이 있습니다.
 
@@ -28,7 +28,7 @@ toc_sticky: true
 
 IO 스트림의 예로 **System.in** 과 **System.out**이 있습니다. 두 스트림은 콘솔과 데이터를 송수신합니다.
 
-## Byte and char streams
+## 2. Byte and char streams
 
 **스트림의 종류**
 
@@ -37,7 +37,7 @@ IO 스트림의 예로 **System.in** 과 **System.out**이 있습니다. 두 스
 
 **Char streams**는 텍스트 데이터를 쉽게 처리할 수 있게 하고 **byte streams**는 char streams보다 낮은 수준이지만 multimedia를 포함한 모든 타입의 데이터를 처리할 수 있습니다.
 
-## Buffered streams
+## 3. Buffered streams
 
 **Buffered streams**는 임시 메모리를 사용하는 스트림입니다. 이러한 스트림은 임시 메모리에서 데이터를 읽거나 쓴 다음 데이터 소스나 해당하는 프로그램으로 데이터를 이동합니다.
 

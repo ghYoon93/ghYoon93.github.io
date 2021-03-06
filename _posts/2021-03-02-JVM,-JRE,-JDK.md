@@ -26,10 +26,6 @@ JVM은 많은 하드웨어와 소프트웨어 플랫폼에서 사용할 수 있�
 
 **JCL**은 collections, input/out 등 많은 자바 라이브러리로 구성되어있습니다.
 
-**JRE** is an execution environment for **running** compiled JVM programs. JRE includes Java Virtual Machine (**JVM**) and Java Class Library (**JCL**).
-
-**JCL** consists of many libraries including input/output, collections, security, classes for parsing XML, user interface toolkits, and many others. Your program can use these libraries.
-
 컴파일된 프로그램을 JRE에서 실행할 때, JVM은 작성한 프로그램과 JCL의 바이트코드 클래스파일을 사용합니다.
 
 ## 3. Java Development Kit (JDK)
