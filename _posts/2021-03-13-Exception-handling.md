@@ -13,7 +13,7 @@ toc_label: 'Table of contents'
 toc_sticky: true
 ---
 
-> 출처 [Exception handling - JetBrains Academy](https://hyperskill.org/learn/step/3522)를 보고 요약한 내용입니다.
+> 출처 [Exception handling - JetBrains Academy](https://hyperskill.org/learn/step/3552)를 보고 요약한 내용입니다.
 
 자바는 **확인된 예외와 확인되지 않은 예외** 모두에서 작동하는 **예외 처리** 메커니즘을 제공합니다.
 
