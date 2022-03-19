@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privateData/
+
 Sitemap: https://ghYoon93.github.io/sitemap.xml
